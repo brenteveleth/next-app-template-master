@@ -1,4 +1,11 @@
-/* Copied from CustomModal.module.css */
+/* Modal title styling using H3 theme values */
+.title {
+  font-weight: var(--mantine-h3-font-weight);
+  font-family: 'Sora', 'Roboto', sans-serif;
+  font-size: var(--mantine-h3-font-size);
+  line-height: var(--mantine-h3-line-height);
+}
+
 .footer {
   position: absolute;
   left: 0;
@@ -30,9 +37,11 @@
 }
 
 .content {
-  padding-bottom: 72px; /* Adjust to match footer height */
+  padding-bottom: 84px; /* Adjust to match footer height */
+  padding-left: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-md);
 }
 
 .contentNoFooter {
-  padding-bottom: 0;
+  padding-bottom: 24px;
 }

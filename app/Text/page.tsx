@@ -1,4 +1,4 @@
-import { Alert, Box, Divider, Text, Title } from '@mantine/core';
+import { Alert, Box, Divider, Space, Text, Title } from '@mantine/core';
 import ComponentsDemoLayout from '../components-demo-layout';
 
 export default function TextDemo() {
@@ -16,6 +16,7 @@ export default function TextDemo() {
           <Text size="md">Default text</Text>
           <Text size="lg">Large text</Text>
           <Text size="xl">Extra large text</Text>
+          <Space h="md" />
           <Text fw={500}>Semibold</Text>
           <Text fw={700}>Bold</Text>
           <Text fs="italic">Italic</Text>

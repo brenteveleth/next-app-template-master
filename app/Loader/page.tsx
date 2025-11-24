@@ -33,20 +33,6 @@ export default function LoaderDemo() {
             <Space w="sm" />
             <Text c="dimmed">Loading</Text>
           </Center>
-          <Space h="lg" />
-          <Center>
-            <Button variant="primary" size="sm" loading w="100px">
-              Primary
-            </Button>
-            <Space w="sm" />
-            <Button variant="outline" size="sm" loading w="100px">
-              Primary
-            </Button>
-            <Space w="sm" />
-            <Button variant="default" size="sm" loading w="100px">
-              Primary
-            </Button>
-          </Center>
         </Card>
       </Box>
     </ComponentsDemoLayout>

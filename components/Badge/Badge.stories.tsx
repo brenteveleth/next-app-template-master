@@ -45,12 +45,8 @@ export const Text: Story = {
 
 export const Icon: Story = {
   args: {
-    size: 'md', // Default size
+    size: 'md',
     iconOnly: true,
-    leftSection: <IconCalendar size={12} />, // Default icon size
-  },
-  render: (args) => {
-    const iconSize = iconSizeMap[args.size || 'md']; // Get the icon size based on the size prop
-    return <Badge {...args} leftSection={<IconCalendar size={iconSize} />} />;
+    leftSection: <IconCalendar />,
   },
 };

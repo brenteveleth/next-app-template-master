@@ -64,10 +64,7 @@
   font-weight: 400;
   color: var(--mantine-primary-color-3);
 }
-[data-mantine-color-scheme='light'] .button[data-variant='subtle']:hover:not(:disabled) {
-  background: transparent !important;
-}
-[data-mantine-color-scheme='dark'] .button[data-variant='subtle']:hover:not(:disabled) {
+.button[data-variant='subtle']:hover:not(:disabled) {
   background: transparent !important;
 }
 [data-mantine-color-scheme='light'] .button[data-variant='subtle']:active:not(:disabled) {

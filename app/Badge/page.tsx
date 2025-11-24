@@ -7,7 +7,6 @@ import {
   Box,
   Card,
   Divider,
-  Flex,
   Group,
   Indicator,
   Space,
@@ -46,9 +45,9 @@ export default function BadgeDemo() {
           <Badge role="primary" size="lg">
             Done
           </Badge>
-          <Badge role="primary" size="sm" iconOnly leftSection={<IconCalendar size={12} />}></Badge>
-          <Badge role="primary" size="md" iconOnly leftSection={<IconCalendar size={12} />}></Badge>
-          <Badge role="primary" size="lg" iconOnly leftSection={<IconCalendar size={16} />}></Badge>
+          <Badge role="primary" size="sm" iconOnly leftSection={<IconCalendar />}></Badge>
+          <Badge role="primary" size="md" iconOnly leftSection={<IconCalendar />}></Badge>
+          <Badge role="primary" size="lg" iconOnly leftSection={<IconCalendar />}></Badge>
         </Group>
         <Space h="lg" />
         <Group>
@@ -151,9 +150,9 @@ export default function BadgeDemo() {
             Low
           </Badge>
 
-          <Badge role="warning" size="sm" iconOnly leftSection={<IconCalendar size={12} />}></Badge>
-          <Badge role="warning" size="md" iconOnly leftSection={<IconCalendar size={12} />}></Badge>
-          <Badge role="warning" size="lg" iconOnly leftSection={<IconCalendar size={16} />}></Badge>
+          <Badge role="warning" size="sm" iconOnly leftSection={<IconCalendar />}></Badge>
+          <Badge role="warning" size="md" iconOnly leftSection={<IconCalendar />}></Badge>
+          <Badge role="warning" size="lg" iconOnly leftSection={<IconCalendar />}></Badge>
         </Group>
         <Space h="lg" />
         <Group>
@@ -176,9 +175,9 @@ export default function BadgeDemo() {
             New
           </Badge>
 
-          <Badge role="info" size="sm" iconOnly leftSection={<IconCalendar size={12} />}></Badge>
-          <Badge role="info" size="md" iconOnly leftSection={<IconCalendar size={12} />}></Badge>
-          <Badge role="info" size="lg" iconOnly leftSection={<IconCalendar size={16} />}></Badge>
+          <Badge role="info" size="sm" iconOnly leftSection={<IconCalendar />}></Badge>
+          <Badge role="info" size="md" iconOnly leftSection={<IconCalendar />}></Badge>
+          <Badge role="info" size="lg" iconOnly leftSection={<IconCalendar />}></Badge>
         </Group>
         <Space h="lg" />
         <Group>

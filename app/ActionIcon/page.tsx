@@ -36,13 +36,13 @@ export default function ActionIconDemo() {
         </Group>
         <Space h="md" />
         <Group justify="left" gap="xs" role="presentation">
-          <ActionIcon aria-label="Back" size="md">
+          <ActionIcon variant="default" aria-label="Back" size="md">
             <IconChevronLeft size={16} stroke={1.5} />
           </ActionIcon>
-          <ActionIcon aria-label="Back" size="lg">
+          <ActionIcon variant="default" aria-label="Back" size="lg">
             <IconChevronLeft size={20} stroke={1.5} />
           </ActionIcon>
-          <ActionIcon aria-label="Back" size="xl">
+          <ActionIcon variant="default" aria-label="Back" size="xl">
             <IconChevronLeft size={28} stroke={1.5} />
           </ActionIcon>
         </Group>
@@ -55,6 +55,18 @@ export default function ActionIconDemo() {
             <IconTrash size={20} stroke={1.5} />
           </ActionIcon>
           <ActionIcon variant="subtle" aria-label="Delete" size="xl">
+            <IconTrash size={28} stroke={1.5} />
+          </ActionIcon>
+        </Group>
+        <Space h="md" />
+        <Group justify="left" gap="xs" role="presentation">
+          <ActionIcon variant="transparent" aria-label="Delete" size="md">
+            <IconTrash size={16} stroke={1.5} />
+          </ActionIcon>
+          <ActionIcon variant="transparent" aria-label="Delete" size="lg">
+            <IconTrash size={20} stroke={1.5} />
+          </ActionIcon>
+          <ActionIcon variant="transparent" aria-label="Delete" size="xl">
             <IconTrash size={28} stroke={1.5} />
           </ActionIcon>
         </Group>

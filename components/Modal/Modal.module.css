@@ -1,0 +1,4 @@
+.mantine-Modal-header {
+  color: var(--mantine-primary-color-6) !important;
+  outline: 2px solid var(--mantine-primary-color-6) !important;
+}

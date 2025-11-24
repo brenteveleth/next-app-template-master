@@ -1,3 +1,8 @@
+// --- CONTEXT ---
+// Prototype for Spot Mantine Test. Defines a custom Mantine theme with specific colors, typography, and component styles.
+// When styling components, prefer using Mantine's `extend` API to ensure consistency and maintainability.
+// Theme should be modular and self-contained, built with dynamic theme switching and adaptability to light/dark modes in mind.// Avoid static overrides; use a resolver function to set CSS variables based on the current theme.
+
 'use client';
 
 import React from 'react';
@@ -17,11 +22,13 @@ import {
   PasswordInput,
   Progress,
   Radio,
+  SegmentedControl,
   Switch,
   Tabs,
   Text,
   Tooltip,
 } from '@mantine/core';
+import '@mantine/core/styles.css';
 import ActionIconClasses from './components/ActionIcon/ActionIcon.module.css';
 import badgeClasses from './components/Badge/Badge.module.css';
 import buttonClasses from './components/Button/Button.module.css';
@@ -48,6 +55,8 @@ declare module '@mantine/core' {
 }
 
 export const theme = createTheme({
+
+  // Colors
   primaryColor: 'idexx-blue',
   primaryShade: 6,
   white: '#fff',
@@ -151,31 +160,44 @@ export const theme = createTheme({
     ],
   },
 
+
+  // Radius //
   radius: {
     pill: '9999px',
   },
 
-  fontFamily: 'Roboto, Sora, sans-serif',
-  // scale: 1.06667,
 
+  // Typography //
+  fontFamily: 'Roboto, sans-serif',
+  fontSizes: {
+    xs: '0.75rem',
+    sm: '0.84375rem',
+    md: '15px', // Set the base font size to 15px
+    lg: '1.1875rem',
+    xl: '1.3125rem',
+  },
   lineHeights: {
     xs: '1.5',
-    sm: '1.4',
+    sm: '1.4075',
     md: '1.6',
+    lg: '1.395',
+    xl: '1.3334',
   },
-
   headings: {
     fontFamily: 'Sora, sans-serif',
     sizes: {
-      h1: { fontSize: '2.625rem', fontWeight: '300', lineHeight: '1.2' },
-      h2: { fontSize: '2.125rem', fontWeight: '300', lineHeight: '1.25' },
-      h3: { fontSize: '1.625rem', fontWeight: '400', lineHeight: '1.3' },
-      h4: { fontSize: '1.125rem', fontWeight: '600', lineHeight: '1.35' },
-      h5: { fontSize: '1.125rem', fontWeight: '400', lineHeight: '1.4' },
+      h1: { fontSize: '2.625rem', fontWeight: '300', lineHeight: '1.262' },
+      h2: { fontSize: '2.125rem', fontWeight: '300', lineHeight: '1.353' },
+      h3: { fontSize: '1.625rem', fontWeight: '400', lineHeight: '1.4615' },
+      h4: { fontSize: '1.125rem', fontWeight: '700', lineHeight: '1.55556' },
+      h5: { fontSize: '1.125rem', fontWeight: '400', lineHeight: '1.55556' },
     },
   },
 
+  // Component styles
   components: {
+
+    // ActionIcon component styles //
     ActionIcon: ActionIcon.extend({
       defaultProps: {
         radius: 'pill',
@@ -184,11 +206,176 @@ export const theme = createTheme({
         root: ActionIconClasses.actionIcon,
       },
     }),
+
+    // Badge component styles //
+    Badge: Badge.extend({
+      defaultProps: {
+        radius: 'sm',
+      },
+      classNames: {
+        root: badgeClasses.root,
+        label: badgeClasses.label,
+        section: badgeClasses.section,
+      },
+    }),
+
+    // Button component styles //
+    Button: Button.extend({
+      defaultProps: {
+        radius: 'pill',
+        variant: 'default',
+      },
+      classNames: {
+        root: buttonClasses.button,
+      },
+    }),
+
+    //  Checkbox component styles //
+    Checkbox: Checkbox.extend({
+      defaultProps: {
+        radius: 'xs',
+      },
+    }),
+
+    // Chip component styles //
+    Chip: Chip.extend({
+      defaultProps: {
+        radius: 'md',
+      },
+      classNames: {
+        label: chipClasses.chipPoops,
+        checkIcon: chipClasses.chipIcon,
+      },
+    }),
+
+    // Drawer component styles //
     Drawer: Drawer.extend({
       classNames: {
         body: drawerClasses.body,
       },
     }),
+
+    // Input component styles //
+    Input: Input.extend({
+      classNames: {
+        input: inputClasses.input,
+      },
+    }),
+
+    // NavLink component styles //
+    NavLink: NavLink.extend({
+      defaultProps: {
+        variant: 'light',
+      },
+      classNames: {
+        root: navLinkClasses.root,
+        label: navLinkClasses.label,
+        section: navLinkClasses.section,
+      },
+      styles: (theme, props) => {
+        let styles: any = {};
+
+        if (props.variant === 'section') {
+          styles = {
+            root: {
+              cursor: 'default',
+              pointerEvents: 'none',
+              '&:hover': {
+                backgroundColor: 'transparent',
+              },
+            },
+            label: {
+              fontSize: '0.75rem', // 12px
+              lineHeight: '1.5', // 18px line height
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              fontFamily: 'Roboto, sans-serif',
+            },
+          };
+        }
+
+        if (props.weight === 'heavy') {
+          styles.label = {
+            ...styles.label,
+            fontWeight: 700,
+            fontFamily: 'Roboto, sans-serif',
+          };
+        }
+
+        return styles;
+      },
+    }),
+
+    // Pagination component styles //
+    Pagination: Pagination.extend({
+      defaultProps: {
+        radius: 'xl',
+        size: 'md',
+      },
+      classNames: {
+        control: paginationClasses.control,
+        root: paginationClasses.root,
+      },
+    }),
+
+    // PasswordInput component styles //
+    PasswordInput: PasswordInput.extend({
+      classNames: {
+        innerInput: inputClasses.input,
+      },
+    }),
+
+    // Progress component styles //
+    Progress: Progress.extend({
+      defaultProps: {
+        radius: 'none',
+        size: 'lg',
+        color: 'violet',
+      },
+      classNames: {
+        root: progressClasses.root,
+      },
+    }),
+
+    // Radio component styles //
+    Radio: Radio.extend({
+      defaultProps: {
+        variant: 'outline',
+      },
+      classNames: {
+        icon: radioClasses.icon,
+        radio: radioClasses.radio,
+      },
+    }),
+
+    // SegmentedControl component styles //
+    SegmentedControl: SegmentedControl.extend({
+      defaultProps: {
+        radius: 'pill',
+        withItemsBorders: false,
+        size: 'md',
+      },
+    }),
+
+    // Switch component styles //
+    Switch: Switch.extend({
+      defaultProps: {
+        color: 'green',
+        thumbIcon: React.createElement(IconCircleFilled, {
+          size: 12,
+          color: 'var(--mantine-color-white)',
+        }),
+      },
+    }),
+
+    // Tabs component styles //
+    Tabs: Tabs.extend({
+      classNames: {
+        tab: tabsClasses.tabsTab,
+      },
+    }),
+
+    // Text component styles //
     Text: Text.extend({
       vars: (theme, props) => {
         if (props.variant === 'tertiary-eyebrow') {
@@ -246,139 +433,13 @@ export const theme = createTheme({
         return {};
       },
     }),
-    Input: Input.extend({
-      classNames: {
-        input: inputClasses.input,
-      },
-    }),
-    PasswordInput: PasswordInput.extend({
-      classNames: {
-        innerInput: inputClasses.input,
-      },
-    }),
-    Button: Button.extend({
-      defaultProps: {
-        radius: 'xl',
-        variant: 'default',
-      },
-      classNames: {
-        root: buttonClasses.button,
-      },
-    }),
-    Badge: Badge.extend({
-      defaultProps: {
-        radius: 'sm',
-      },
-      classNames: {
-        root: badgeClasses.root,
-        label: badgeClasses.label,
-        section: badgeClasses.section,
-      },
-    }),
-    Chip: Chip.extend({
-      defaultProps: {
-        radius: 'md',
-      },
-      classNames: {
-        label: chipClasses.chipPoops,
-        checkIcon: chipClasses.chipIcon,
-      },
-    }),
-    Radio: Radio.extend({
-      defaultProps: {
-        variant: 'outline',
-      },
-      classNames: {
-        icon: radioClasses.icon,
-        radio: radioClasses.radio,
-      },
-    }),
-    Switch: Switch.extend({
-      defaultProps: {
-        color: 'green',
-        thumbIcon: React.createElement(IconCircleFilled, {
-          size: 12,
-          color: 'var(--mantine-color-white)',
-        }),
-      },
-    }),
-    NavLink: NavLink.extend({
-      defaultProps: {
-        variant: 'light',
-      },
-      classNames: {
-        root: navLinkClasses.root,
-        label: navLinkClasses.label,
-        section: navLinkClasses.section,
-      },
-      styles: (theme, props) => {
-        let styles: any = {};
 
-        if (props.variant === 'section') {
-          styles = {
-            root: {
-              cursor: 'default',
-              pointerEvents: 'none',
-              '&:hover': {
-                backgroundColor: 'transparent',
-              },
-            },
-            label: {
-              fontSize: '0.75rem', // 12px
-              lineHeight: '1.5', // 18px line height
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              fontFamily: 'Roboto, sans-serif',
-            },
-          };
-        }
-
-        if (props.weight === 'heavy') {
-          styles.label = {
-            ...styles.label,
-            fontWeight: 700,
-            fontFamily: 'Roboto, sans-serif',
-          };
-        }
-
-        return styles;
-      },
-    }),
-    Checkbox: Checkbox.extend({
-      defaultProps: {
-        radius: 'xs',
-      },
-    }),
-    Pagination: Pagination.extend({
-      defaultProps: {
-        radius: 'xl',
-        size: 'md',
-      },
-      classNames: {
-        control: paginationClasses.control,
-        root: paginationClasses.root,
-      },
-    }),
+    // Tooltip component styles //
     Tooltip: Tooltip.extend({
       defaultProps: {
         radius: 'md',
         color: 'dark',
         withArrow: false,
-      },
-    }),
-    Progress: Progress.extend({
-      defaultProps: {
-        radius: 'none',
-        size: 'lg',
-        color: 'violet',
-      },
-      classNames: {
-        root: progressClasses.root,
-      },
-    }),
-    Tabs: Tabs.extend({
-      classNames: {
-        tab: tabsClasses.tabsTab,
       },
     }),
   },

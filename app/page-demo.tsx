@@ -34,9 +34,7 @@ import {
   Paper,
   PasswordInput,
   PinInput,
-  Popover,
   Radio,
-  RadioGroup,
   Select,
   Space,
   Stack,
@@ -554,18 +552,6 @@ export default function HomePage() {
                   ></Badge>
                 </Group>
                 <Space h="lg" />
-                <Group>
-                  <Popover width={200} position="bottom" withArrow shadow="md">
-                    <Popover.Target>
-                      <Button>Toggle popover</Button>
-                    </Popover.Target>
-                    <Popover.Dropdown>
-                      <Text size="xs">
-                        This is uncontrolled popover, it is opened when button is clicked
-                      </Text>
-                    </Popover.Dropdown>
-                  </Popover>
-                </Group>
               </Paper>
 
               {submittedData && (
@@ -581,26 +567,6 @@ export default function HomePage() {
                   <Text>Consent to contact: {submittedData.consent ? 'Yes' : 'No'}</Text>
                 </Card>
               )}
-            </Box>
-            <Box>
-              <Group>
-                <Button size="sm">Submit</Button>
-                <ActionIcon size="md">
-                  <IconSend2 size={16} />
-                </ActionIcon>
-              </Group>
-              <Group>
-                <Button size="md">Submit</Button>
-                <ActionIcon size="lg">
-                  <IconSend2 size={20} />
-                </ActionIcon>
-              </Group>
-              <Group>
-                <Button size="lg">Submit</Button>
-                <ActionIcon size="xl">
-                  <IconSend2 size={28} />
-                </ActionIcon>
-              </Group>
             </Box>
           </Grid.Col>
           <Grid.Col span={6}>
@@ -700,7 +666,7 @@ export default function HomePage() {
                       resize="vertical"
                     />
 
-                    <RadioGroup
+                    <Radio.Group
                       name="favoriteBand"
                       label="What's your favorite band?"
                       description="This is anonymous"
@@ -713,7 +679,7 @@ export default function HomePage() {
                         <Radio value="Ministry" label="Ministry" />
                         <Radio value="Fantomas" label="Fantomas" />
                       </Group>
-                    </RadioGroup>
+                    </Radio.Group>
 
                     <Group grow gap="md" mt="xl">
                       <Button variant="default" radius="xl" onClick={() => form.reset()}>
@@ -740,17 +706,6 @@ export default function HomePage() {
                   <Text>Consent to contact: {submittedData.consent ? 'Yes' : 'No'}</Text>
                 </Card>
               )}
-            </Box>
-            <Box>
-              <Grid.Col span={12}>
-                <Paper withBorder p="md" mt="lg" radius="md">
-                  <Button.Group>
-                    <Button variant="outline">First</Button>
-                    <Button variant="outline">Second</Button>
-                    <Button variant="outline">Third</Button>
-                  </Button.Group>
-                </Paper>
-              </Grid.Col>
             </Box>
           </Grid.Col>
         </Grid>

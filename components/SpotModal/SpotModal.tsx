@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Group, Modal, Text } from '@mantine/core';
+import { Button, CloseButton, Group, Modal, Space, Text } from '@mantine/core';
 import styles from './SpotModal.module.css';
 
 export type SpotModalProps = React.ComponentProps<typeof Modal> & {
@@ -15,8 +15,33 @@ export type SpotModalProps = React.ComponentProps<typeof Modal> & {
   onPrevious?: () => void;
 };
 
+function ModalHeader({ title, onClose }: { title: React.ReactNode; onClose: () => void }) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: '1rem',
+      }}
+    >
+      <div
+        style={{
+          fontSize: '1.735rem',
+          fontWeight: 400,
+          lineHeight: '1.465',
+          fontFamily: 'Sora, sans-serif',
+        }}
+      >
+        {title}
+      </div>
+      <CloseButton onClick={onClose} />
+    </div>
+  );
+}
+
 export function SpotModal({
-  showFooter = false,
+  showFooter = true,
   onPrimary,
   onSecondary,
   submitLabel = 'Submit',
@@ -30,12 +55,22 @@ export function SpotModal({
   ...modalProps
 }: SpotModalProps) {
   return (
-    <Modal {...modalProps}>
+    <Modal
+      {...modalProps}
+      withCloseButton={false}
+      title={null}
+      classNames={{
+        title: styles.title,
+        ...modalProps.classNames,
+      }}
+    >
       {showSubheader && (
-        <Text size="sm" fw={600} mb="xs" style={{ lineHeight: 1 }}>
+        <Text fw={600} style={{ lineHeight: 1 }}>
           {subheaderText}
         </Text>
       )}
+      {modalProps.title && <ModalHeader title={modalProps.title} onClose={modalProps.onClose} />}
+
       {/* Modal title will be rendered by Mantine's Modal via modalProps.title */}
       <div className={showFooter ? styles.content : styles.contentNoFooter}>{children}</div>
       {showFooter && (
