@@ -1,10 +1,10 @@
 /* Modal title styling using H3 theme values */
-.title {
+/* .title {
   font-weight: var(--mantine-h3-font-weight);
   font-family: 'Sora', 'Roboto', sans-serif;
   font-size: var(--mantine-h3-font-size);
   line-height: var(--mantine-h3-line-height);
-}
+} */
 
 .footer {
   position: absolute;

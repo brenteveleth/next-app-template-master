@@ -220,6 +220,12 @@ export default function BadgeDemo() {
           ></Badge>
         </Group>
         <Space h="lg" />
+
+        <Divider my="lg" mb="xl" />
+        <Title order={5} mb="md">
+          Indicator
+        </Title>
+
         <Group>
           <Box p="md">
             <Indicator size={12} withBorder position="bottom-end" offset={4}>

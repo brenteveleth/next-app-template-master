@@ -4,7 +4,7 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'; // Import the hook
-import { AppShell, Box, Group, NavLink, Stack, Title } from '@mantine/core';
+import { AppShell, Box, Group, NavLink, Space, Stack, Title } from '@mantine/core';
 import { ActionToggle } from '../components/ActionToggle/ActionToggle';
 
 const components = [
@@ -175,9 +175,13 @@ export default function ComponentsDemoLayout({ children }: { children: ReactNode
           />
           {/* Misc. */}
           <NavLink label="Misc." variant="section" />
+          <Space h="xl" />
         </Stack>
       </AppShell.Navbar>
-      <AppShell.Main className="main-content">{children}</AppShell.Main>
+      <AppShell.Main className="main-content">
+        {children}
+        <Space h="xl" />
+      </AppShell.Main>
     </AppShell>
   );
 }

@@ -40,6 +40,7 @@ export default function ModalDemo() {
             onClose={closeSpot}
             title="Modal Header"
             subheaderText="Subheader Text"
+            showPrevious={true}
           >
             <Text>
               Now you can link a patient's diagnostic history between referral and referring clinics

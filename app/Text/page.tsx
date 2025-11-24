@@ -30,9 +30,6 @@ export default function TextDemo() {
           <Text ta="center">Aligned to center</Text>
           <Text ta="right">Aligned to right</Text>
         </>
-        <Alert title="Note" color="orange" mt="xl">
-          A few updates to the Spot 2 type scale are needed
-        </Alert>
       </Box>
     </ComponentsDemoLayout>
   );

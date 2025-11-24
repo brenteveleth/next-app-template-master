@@ -23,18 +23,20 @@ function ModalHeader({ title, onClose }: { title: React.ReactNode; onClose: () =
         justifyContent: 'space-between',
         alignItems: 'center',
         marginBottom: '1rem',
+        marginTop: '-1rem',
       }}
     >
-      <div
+      <h3
         style={{
-          fontSize: '1.735rem',
+          fontSize: '1.625rem',
           fontWeight: 400,
-          lineHeight: '1.465',
+          lineHeight: '1.4615',
           fontFamily: 'Sora, sans-serif',
+          paddingLeft: '16px',
         }}
       >
         {title}
-      </div>
+      </h3>
       <CloseButton onClick={onClose} />
     </div>
   );

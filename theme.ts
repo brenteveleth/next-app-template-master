@@ -225,6 +225,20 @@ export const theme = createTheme({
         radius: 'pill',
         variant: 'default',
       },
+      styles: (theme, params) => ({
+        root: {
+          fontSize:
+            params.size === 'xs'
+              ? theme.fontSizes.xs
+              : params.size === 'sm'
+                ? theme.fontSizes.sm
+                : params.size === 'md'
+                  ? theme.fontSizes.md
+                  : params.size === 'lg'
+                    ? theme.fontSizes.lg
+                    : theme.fontSizes.xl,
+        },
+      }),
       classNames: {
         root: buttonClasses.button,
       },
