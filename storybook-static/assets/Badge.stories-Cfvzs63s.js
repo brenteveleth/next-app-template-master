@@ -1,0 +1,13 @@
+import{c as g,R as a,B as v,s as e}from"./iframe-CPIFpGmq.js";import"./preload-helper-PPVm8Dsz.js";const y=[["path",{d:"M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z",key:"svg-0"}],["path",{d:"M16 3v4",key:"svg-1"}],["path",{d:"M8 3v4",key:"svg-2"}],["path",{d:"M4 11h16",key:"svg-3"}],["path",{d:"M11 15h1",key:"svg-4"}],["path",{d:"M12 15v3",key:"svg-5"}]],f=g("outline","calendar","Calendar",y),h={sm:12,md:12,lg:16},o=a.forwardRef(({role:c,iconOnly:r=!1,children:d,leftSection:s,size:l="md",...m},p)=>{let i=s;if(r&&a.isValidElement(s)){const u=h[l]||12;i=a.cloneElement(s,{size:u})}return a.createElement(v,{ref:p,...m,"data-role":c,size:l,leftSection:i,classNames:{root:r?`${e.root} ${e.iconOnly}`:e.root,label:e.label,section:e.section}},!r&&d)});o.displayName="Badge";o.__docgenInfo={description:"",methods:[],displayName:"Badge",props:{role:{required:!1,tsType:{name:"union",raw:"'primary' | 'secondary' | 'positive' | 'negative' | 'warning' | 'info'",elements:[{name:"literal",value:"'primary'"},{name:"literal",value:"'secondary'"},{name:"literal",value:"'positive'"},{name:"literal",value:"'negative'"},{name:"literal",value:"'warning'"},{name:"literal",value:"'info'"}]},description:""},iconOnly:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}},leftSection:{required:!1,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},size:{required:!1,tsType:{name:"union",raw:"'sm' | 'md' | 'lg'",elements:[{name:"literal",value:"'sm'"},{name:"literal",value:"'md'"},{name:"literal",value:"'lg'"}]},description:"",defaultValue:{value:"'md'",computed:!1}},children:{required:!1,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""}},composes:["MantineBadgeProps"]};const B={title:"Display/Badge",component:o,tags:["autodocs"],argTypes:{role:{control:"select",options:["primary","secondary","positive","negative","warning","info"]},iconOnly:{control:!1,table:{disable:!0}},leftSection:{control:!1,table:{disable:!0}},size:{control:"select",options:["sm","md","lg"]}}},t={args:{children:"Badge",role:"primary",size:"md"}},n={args:{size:"md",iconOnly:!0,leftSection:a.createElement(f,null)}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: 'Badge',
+    role: 'primary',
+    size: 'md'
+  }
+}`,...t.parameters?.docs?.source}}};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:`{
+  args: {
+    size: 'md',
+    iconOnly: true,
+    leftSection: <IconCalendar />
+  }
+}`,...n.parameters?.docs?.source}}};const w=["Text","Icon"];export{n as Icon,t as Text,w as __namedExportsOrder,B as default};

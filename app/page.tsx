@@ -20,7 +20,6 @@ import {
   IconShow,
   IconTimeClock,
 } from 'spot-icons-proto';
-// If your package name is different, use that name here!
 import {
   ActionIcon,
   Anchor,
@@ -122,7 +121,6 @@ type FormValues = {
 };
 
 export default function HomePage() {
-  // ...existing code...
   const [singleValue, setSingleValue] = useState('edit');
   const [multiValue, setMultiValue] = useState<string[]>(['edit']);
   const [submittedData, setSubmittedData] = useState<FormValues | null>(null);
@@ -1076,6 +1074,29 @@ export default function HomePage() {
               </Paper>
             </Box>
             <Card component="a">Hello world</Card>
+            <Space h="xl" />
+            <Card shadow="sm" padding="lg" radius="md" withBorder>
+              <Card.Section>
+                <Image
+                  src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2886"
+                  height={160}
+                  alt="Black and White Cat"
+                />
+              </Card.Section>
+
+              <Group justify="space-between" mt="md" mb="xs">
+                <Text fw={500}>Lulu</Text>
+                <Badge role="info">New Patient</Badge>
+              </Group>
+
+              <Text size="sm" c="dimmed">
+                Cats are curious, playful companions who bring joy and comfort to any home.
+              </Text>
+
+              <Button variant="outline" fullWidth mt="md">
+                Schedule appointment
+              </Button>
+            </Card>
           </Grid.Col>
         </Grid>
       </AppShell.Main>
