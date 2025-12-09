@@ -6,6 +6,7 @@
   max-width: 390px;
   margin: 0 auto;
   position: relative;
+  /* border: 1px solid magenta; */
 }
 
 .header {

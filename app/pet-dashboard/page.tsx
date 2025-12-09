@@ -96,15 +96,15 @@ export default function PetDashboardPage() {
               My Pets
             </Title>
             {/* Horizontal ScrollArea for pet cards */}
-            <ScrollArea type="scroll" scrollbarSize={8} offsetScrollbars>
-              <Group gap="md" align="stretch" wrap="nowrap" style={{ minWidth: '100%' }}>
+            <ScrollArea type="scroll" scrollbarSize={0} offsetScrollbars>
+              <Group gap="md" align="stretch" wrap="nowrap" maw={374}>
                 {mockData.pets.map((pet) => (
                   <Card
                     key={pet.id}
                     radius="md"
                     p={0}
                     style={{
-                      width: 340,
+                      width: 240,
                       border: '1px solid white',
                       overflow: 'hidden',
                       cursor: 'pointer',
