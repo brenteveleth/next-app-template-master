@@ -188,6 +188,7 @@ export const theme = createTheme({
   },
 
   // Radius //
+  defaultRadius: 'lg',
   radius: {
     pill: '9999px',
   },

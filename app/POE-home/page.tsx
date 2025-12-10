@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import next from 'next';
 import {
   IconCalendar,
   IconChevronRight,
@@ -10,21 +9,14 @@ import {
   IconClipboard,
   IconClock,
   IconDotsVertical,
-  IconHome,
   IconHomeFilled,
   IconInfoCircle,
   IconMapPin,
-  IconMedicalCross,
-  IconMenu2,
-  IconPlus,
   IconSettings,
   IconStethoscope,
 } from '@tabler/icons-react';
-import { color } from 'storybook/theming';
 import {
   ActionIcon,
-  Avatar,
-  Badge,
   Box,
   Button,
   Card,
@@ -35,21 +27,23 @@ import {
   MantineColorsTuple,
   MantineProvider,
   Menu,
+  mergeThemeOverrides,
   ScrollArea,
   Space,
   Stack,
   Text,
   Title,
 } from '@mantine/core';
+import { UVCTheme, VelloTheme, VPTheme } from '../../theme-merge';
 import styles from './page.module.css';
 
-// Mock data
+// Mock data //
 const mockData = {
   pets: [
     {
       id: 1,
       name: 'Bella',
-      breed: 'Labrador Retriever',
+      breed: 'Mixed Breed',
       image: '/images/pet-bella.jpg',
       complianceScore: 100,
       hasAlerts: true,
@@ -83,30 +77,25 @@ const mockData = {
 };
 
 function POEHomePage() {
-  type ThemeName = 'Vello' | 'VetPartners' | 'UnitedVeterinaryCare';
-  const [themeName, setThemeName] = useState<ThemeName>('Vello');
-  const themes: Record<ThemeName, { colorScheme: string; primaryColor: string }> = {
-    Vello: {
-      colorScheme: 'light',
-      primaryColor: 'idexx-blue',
-    },
-    VetPartners: {
-      colorScheme: 'light',
-      primaryColor: 'vpYellow',
-    },
-    UnitedVeterinaryCare: {
-      colorScheme: 'light',
-      primaryColor: 'uvcOrange',
-    },
+  // Theme switching //
+  const themeMap: Record<ThemeName, any> = {
+    Vello: VelloTheme,
+    VetPartners: VPTheme,
+    UnitedVeterinaryCare: UVCTheme,
   };
+
   const logos: Record<ThemeName, string> = {
     Vello: '/images/vello-logo.svg',
-    VetPartners: '/images/vp_logo.png',
+    VetPartners: '/images/vpuk_logo.svg',
     UnitedVeterinaryCare: '/images/uvc_logo.png',
   };
 
+  type ThemeName = 'Vello' | 'VetPartners' | 'UnitedVeterinaryCare';
+  const [themeName, setThemeName] = useState<ThemeName>('Vello');
+
+  // Page //
   return (
-    <MantineProvider theme={themes[themeName]}>
+    <MantineProvider theme={themeMap[themeName]}>
       <Box className={styles.container}>
         {/* Header */}
         <Box className={styles.header}>
@@ -148,6 +137,7 @@ function POEHomePage() {
               {/* Horizontal ScrollArea for pet cards */}
               <ScrollArea type="scroll" scrollbarSize={0} offsetScrollbars>
                 <Group gap="md" align="stretch" wrap="nowrap" pl="md" w="448px">
+                  {/*  Radius here  */}
                   {mockData.pets.map((pet) => (
                     <Card
                       key={pet.id}
@@ -207,9 +197,10 @@ function POEHomePage() {
                   >
                     Book
                   </Button>
-                  {/* ...existing code... */}
                 </Group>
                 <Card radius="lg" p="md" withBorder>
+                  {' '}
+                  {/*  Radius here  */}
                   <Stack gap="sm">
                     <Text fw={600} size="md">
                       {mockData.appointment.title}
@@ -260,6 +251,8 @@ function POEHomePage() {
                 <Title order={5} mb="md">
                   My Practice
                 </Title>
+
+                {/*  Radius here  */}
                 <Card
                   radius="lg"
                   p="md"
