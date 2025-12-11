@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  background-color: var(--mantine-color-dark-7);
+  background-color: var(--mantine-color-specialDark-7);
   display: flex;
   flex-direction: column;
   max-width: 390px;
@@ -9,7 +9,7 @@
 }
 
 .header {
-  background-color: var(--mantine-color-dark-7);
+  background-color: var(--mantine-color-specialDark-7);
   padding-top: 1rem;
 }
 
@@ -20,10 +20,12 @@
 }
 
 .lightSection {
-  background-color: #f4f6f7;
-  border-radius: 24px 24px 0 0;
-  padding-top: 1.5rem;
-  padding-bottom: 2rem;
+  background-color: var(--mantine-color-gray-0);
+  /* border-radius: 24px 24px 0 0; */
+  border-top-left-radius: var(--mantine-radius-xl);
+  border-top-right-radius: var(--mantine-radius-xl);
+  padding-top: var(--mantine-spacing-sm);
+  padding-bottom: var(--mantine-spacing-lg);
 }
 
 .calendarBox {
@@ -72,3 +74,4 @@
   background-color: #1e1f1f;
   border-radius: 100px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100..900&family=Rubik:wght@300..900&family=Sora:wght@100..800&display=swap');

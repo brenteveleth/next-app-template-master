@@ -185,10 +185,21 @@ export const theme = createTheme({
       '#19617F', // 8
       '#0E455B', // 9 Darkest
     ],
+    specialDark: [
+      '#31353D', // 0 Lightest
+      '#31353D', // 1
+      '#31353D', // 2
+      '#31353D', // 3
+      '#31353D', // 4
+      '#31353D', // 5
+      '#31353D', // 6
+      '#31353D', // 7
+      '#31353D', // 8
+      '#31353D', // 9 Darkest
+    ],
   },
 
-  // Radius //
-  defaultRadius: 'lg',
+  // Radius //=
   radius: {
     pill: '9999px',
   },

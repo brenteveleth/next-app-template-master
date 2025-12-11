@@ -87,7 +87,7 @@ function POEHomePage() {
   const logos: Record<ThemeName, string> = {
     Vello: '/images/vello-logo.svg',
     VetPartners: '/images/vpuk_logo.svg',
-    UnitedVeterinaryCare: '/images/uvc_logo.png',
+    UnitedVeterinaryCare: '/images/uvc_logo_wh.png',
   };
 
   type ThemeName = 'Vello' | 'VetPartners' | 'UnitedVeterinaryCare';
@@ -141,7 +141,6 @@ function POEHomePage() {
                   {mockData.pets.map((pet) => (
                     <Card
                       key={pet.id}
-                      radius="lg"
                       p={0}
                       style={{
                         width: 200,
@@ -198,8 +197,8 @@ function POEHomePage() {
                     Book
                   </Button>
                 </Group>
-                <Card radius="lg" p="md" withBorder>
-                  {' '}
+                <Card p="md" withBorder>
+                  {/* {' '} */}
                   {/*  Radius here  */}
                   <Stack gap="sm">
                     <Text fw={600} size="md">
@@ -220,17 +219,21 @@ function POEHomePage() {
                       {/* Appointment Details */}
                       <Stack gap={6} style={{ flex: 1 }}>
                         <Group gap="xs" wrap="nowrap" align="top">
-                          <IconMapPin size={20} color="#97999b" />
+                          <IconClock size={20} color="var(--mantine-color-gray-3)" />
                           <Text size="sm" w="180px" style={{ lineHeight: 1.333 }}>
                             {mockData.appointment.nextAppointment}
                           </Text>
                         </Group>
                         <Group gap="xs" wrap="nowrap">
-                          <IconMapPin size={20} color="#97999b" />
+                          <IconMapPin size={20} color="var(--mantine-color-gray-3)" />
                           <Text size="sm">{mockData.appointment.clinic}</Text>
                         </Group>
                       </Stack>
-                      <IconChevronRight size={20} color="#babdbf" style={{ flexShrink: 0 }} />
+                      <IconChevronRight
+                        size={20}
+                        color="var(--mantine-color-gray-3)"
+                        style={{ flexShrink: 0 }}
+                      />
                     </Group>
                     <Divider />
                     <Button
@@ -251,10 +254,8 @@ function POEHomePage() {
                 <Title order={5} mb="md">
                   My Practice
                 </Title>
-
                 {/*  Radius here  */}
                 <Card
-                  radius="lg"
                   p="md"
                   withBorder
                   style={{ cursor: 'pointer' }}
