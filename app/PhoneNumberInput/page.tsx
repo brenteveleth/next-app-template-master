@@ -1,8 +1,18 @@
-import { Alert, Box, Divider, Text, Title } from '@mantine/core';
-import PhoneNumberInput from '../../components/PhoneNumberInput/PhoneNumberInput';
+'use client';
+
+import {
+  Box,
+  Divider,
+  Notification,
+  Text,
+  Title,
+} from '@mantine/core';
+import PhoneNumberInput from '@/components/PhoneNumberInput/PhoneNumberInput';
 import ComponentsDemoLayout from '../components-demo-layout';
 
+
 export default function PhoneNumberInputDemo() {
+
   return (
     <ComponentsDemoLayout>
       <Title order={2}>PhoneNumberInput</Title>
@@ -11,19 +21,40 @@ export default function PhoneNumberInputDemo() {
       </Text>
       <Divider my="lg" mb="xl" />
       <Box mt="md">
-        <PhoneNumberInput
-          label="Phone Number"
-          placeholder="Enter your phone number"
-          mt="lg"
-          value={''}
-          onChange={function (event: React.ChangeEvent<HTMLInputElement>): void {
-            throw new Error('Function not implemented.');
-          }}
-          name={''}
-        />
-        <Alert title="Note" color="orange" mt="lg">
-          PhoneNumberInput needs the Spot icon applied
-        </Alert>
+       
+            <PhoneNumberInput
+              label="Phone Number"
+              name="phone"
+              value=""
+              onChange={() => {}}
+              mt="lg"
+              size="sm"
+              placeholder="(___) ___-____"
+              maw={120}
+              w="100%"
+            />
+            <PhoneNumberInput
+              label="Phone Number"
+              name="phone"
+              value=""
+              onChange={() => {}}
+              mt="lg"
+              size="md"
+              placeholder="(___) ___-____"
+              maw={140}
+              w="100%"
+            />
+            <PhoneNumberInput
+              label="Phone Number"
+              name="phone"
+              value=""
+              onChange={() => {}}
+              mt="lg"
+              size="lg"
+              placeholder="(___) ___-____"
+              maw={164}
+              w="100%"
+            />
       </Box>
     </ComponentsDemoLayout>
   );

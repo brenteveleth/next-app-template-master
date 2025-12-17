@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { hrtime } from 'process';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button, Drawer } from '@mantine/core';
 
 const meta: Meta<typeof Drawer> = {
