@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IconArrowRight, IconSend } from '@tabler/icons-react';
 import { Button } from '@mantine/core';
 
